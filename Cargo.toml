@@ -1,5 +1,6 @@
 [package]
 name = "cli"
+description = "Rust CLI Template"
 version = "0.1.0"
 edition = "2021"
 authors = ["azzamsa <vcs@azzamsa.com>"]
@@ -15,14 +16,22 @@ codegen-units = 1
 lto = true
 panic = 'abort'
 
-[dependencies]
-clap = { version = "3.2.10", features = ["suggestions", "cargo"] }
 
-anyhow = "1.0.58"
+[dependencies]
+# cli
+clap = { version = "3.2.12", features = ["suggestions", "cargo"] }
+ansi_term = "0.12.1"
+wild = "2.0.4"
+atty = "0.2.14"
+
+# error
 thiserror = "1.0.31"
 
 
 [dev-dependencies]
-rusty-hook = "^0.11.2"
+# test
 assert_cmd = "2.0.4"
 predicates = "2.1.1"
+anyhow = "1.0.58"
+
+cargo-husky = { version = "1", features = ["user-hooks"] }
