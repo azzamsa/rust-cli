@@ -1,6 +1,9 @@
-pub mod app;
+#![deny(unsafe_code)]
+
+pub mod config;
+pub mod controller;
 pub mod error;
-pub mod util;
+pub mod printer;
 
 // Aliases
 pub use error::Error;
